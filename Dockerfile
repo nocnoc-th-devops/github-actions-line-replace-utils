@@ -8,6 +8,7 @@ WORKDIR /
 
 COPY main.cxx .
 COPY entry-point.sh .
+COPY . .
 #COPY $INPUT_FILE .
 #COPY $REPLACE_FILE .
 
