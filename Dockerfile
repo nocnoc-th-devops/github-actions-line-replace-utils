@@ -15,5 +15,6 @@ COPY . .
 RUN apt update
 RUN apt install -y g++ 
 RUN g++ -o replace -g -O3 main.cxx
+RUN ls -rl
 
 CMD [ "/entry-point.sh" ]
