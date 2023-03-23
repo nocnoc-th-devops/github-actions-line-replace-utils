@@ -8,4 +8,4 @@ RUN apt update
 RUN apt install -y g++ 
 RUN g++ -o replace -g -O3 main.cxx
 
-CMD [ "/entry-point.sh" ]
+ENTRYPOINT [ "/entry-point.sh" ]
