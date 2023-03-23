@@ -1,0 +1,31 @@
+name: 'ntd - line replace utils'
+description: 'ntd - line replace utils'
+inputs:
+  input_file:
+    description: Input file
+    required: true
+  line_pattern:
+    description: RegEx pattern to detect the line to be replaced
+    required: true
+  replace_value:
+    description: Replace value
+    required: false
+    default: ""
+  replace_file:
+    description: Replace file
+    required: false
+    default: "blank.txt"
+outputs:
+  replaced_string: 
+    description: The replaced content of the file
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.input_file }}
+    - ${{ inputs.line_pattern }}
+    - ${{ inputs.replace_value }}
+    - ${{ inputs.replace_file }}
+branding:
+  icon: arrow-up-circle
+  color: blue
