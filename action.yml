@@ -21,11 +21,11 @@ outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  env:
-    INPUT_FILE: ${{ inputs.input_file }}
-    LINE_PATTERN: ${{ inputs.line_pattern }}
-    REPLACE_VALUE: ${{ inputs.replace_value }}
-    REPLACE_FILE: ${{ inputs.replace_file }}
+  args:
+    - "${{ inputs.input_file }}"
+    - "${{ inputs.line_pattern }}"
+    - "${{ inputs.replace_value }}"
+    - "${{ inputs.replace_file }}"
 branding:
   icon: arrow-up-circle
   color: blue
