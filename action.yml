@@ -22,10 +22,10 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.input_file }}
-    - ${{ inputs.line_pattern }}
-    - ${{ inputs.replace_value }}
-    - ${{ inputs.replace_file }}
+    - -e INPUT_FILE=${{ inputs.input_file }}
+    - -e LINE_PATTERN=${{ inputs.line_pattern }}
+    - -e REPLACE_VALUE=${{ inputs.replace_value }}
+    - -e REPLACE_FILE=${{ inputs.replace_file }}
 branding:
   icon: arrow-up-circle
   color: blue
